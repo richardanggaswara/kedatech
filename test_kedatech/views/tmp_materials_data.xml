@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="tmp_materials_data" name="Sale Details">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container"><br />
+                    <center>
+                        <h3>Material Details</h3>
+                    </center><br />
+                    <table class="table-striped table">
+                        <thead style="font-size: 23px;">
+                            <tr>
+                                <h6><b>
+                                        <th>Material Code</th>
+                                        <th>Material Name</th>
+                                        <th>Material Type</th>
+                                        <th><b>Material Buy Price</b></th>
+                                        <th><b>Material Supplier</b></th>
+                                    </b></h6>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="records" t-as="material">
+                                <tr>
+                                    <td><span t-esc="material.code" /></td>
+                                    <td><span t-esc="material.name" /></td>
+                                    <td><span t-esc="material.mat_type" /></td>
+                                    <td><span t-esc="material.buy_price" /></td>
+                                    <td><span t-esc="material.supplier" /></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

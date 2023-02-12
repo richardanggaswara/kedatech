@@ -1,0 +1,62 @@
+<odoo>
+	<data>
+		<record id="view_material_views_tree" model="ir.ui.view">
+			<field name="name">view_material_views_tree</field>
+			<field name="model">test.material_models</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="8"/>
+			<field name="arch" type="xml">
+				<tree string="Material Supplier">
+					<field name="code" string="Material Code"/>
+					<field name="name" string="Material Name"/>
+					<field name="mat_type" string="Material Type"/>
+					<field name="buy_price" string="Material Buy Price"/>
+					<field name="supplier" string="Material Supplier"/>
+				</tree>
+			</field>
+		</record>
+		<record id="view_material_views_form" model="ir.ui.view">
+            <field name="name">view_material_views_form</field>
+            <field name="model">test.material_models</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Material Supplier">
+                	<sheet>
+                		<div class="oe_title">
+                            <label for="code" class="oe_edit_only" string="Material Code"/>
+                            <h1><field name="code"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="mat_type" />
+                            </group>
+                            <group>
+                                <field name="buy_price" />
+                                <field name="supplier" />
+                            </group>
+                        </group>
+                    </sheet>
+               	</form>
+            </field>
+        </record>
+        <record id="action_view_material_views" model="ir.actions.act_window">
+			<field name="name">Material Supplier</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">test.material_models</field>
+			<field name="view_mode">tree,form,kanban</field>
+			<field name="context">{'group_by':'mat_type'}</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+				Click to add a new Material Registration
+				</p><p>
+				Click the Create button to add a new Material Registration
+				</p>
+			</field>
+		</record>
+		<menuitem id="main_menu_test_material_views" name="Material"/> 
+		<menuitem id="sub_menu_test_material_views" name="Menu" parent="main_menu_test_material_views" sequence="10"/>
+		<menuitem id="menu_test_material_views" name="Registration" parent="sub_menu_test_material_views" action="action_view_material_views" sequence="20"/>
+	</data>
+</odoo>
