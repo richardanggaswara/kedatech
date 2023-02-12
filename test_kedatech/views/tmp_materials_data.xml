@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="tmp_materials_data" name="Sale Details">
-        <t t-call="website.layout">
             <div class="oe_structure">
                 <div class="container"><br />
                     <center>
@@ -33,6 +32,6 @@
                     </table>
                 </div>
             </div>
-        </t>
+        
     </template>
 </odoo>
